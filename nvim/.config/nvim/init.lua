@@ -1,6 +1,8 @@
+require "configs.tabsettings"
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 vim.opt.relativenumber = true
+vim.api.nvim_set_hl(0, "Comment", { fg = "#808080" }) -- Ensure comments are grey
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 

@@ -14,7 +14,16 @@ return {
     "zbirenbaum/copilot.lua",
     lazy = false,
     opts = function(_, conf)
-      conf.suggestion = { enabled = false }
+      conf.suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        h1_group = "Comment",
+        keymap = {
+          accept = "<M-l>",
+          dismiss = "<M-h>",
+          trigger = "<C-space>",
+        },
+      }
       conf.panel = { enabled = false }
     end,
   },
@@ -25,21 +34,29 @@ return {
     end,
   },
   {
-    "zbirenbaum/copilot-cmp",
-    lazy = false,
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
-  {
     "hrsh7th/nvim-cmp",
-    opts = function(_, conf)
-      table.insert(conf.sources, { name = "copilot" })
-    end,
   },
   {
     "lervag/vimtex",
     lazy = false,
+    init = function()
+      vim.g.vimtex_syntax_conceal_enabled = 1
+      vim.g.vimtex_syntax_conceal = {
+        accents = 1,
+        ligatures = 1,
+        cites = 1,
+        greek = 1,
+        math_bounds = 1,
+        math_delimiters = 1,
+      }
+      vim.opt.conceallevel = 2
+      vim.g.vimtex_compiler_output_path = "."
+      vim.g.vimtex_compiler_latexmk = {
+        build_dir = "build",
+        aux_dir = "./build/aux",
+        log_dir = "./build/logs",
+      }
+    end,
   },
   {
     "nvim-java/nvim-java",
