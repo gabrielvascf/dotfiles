@@ -27,10 +27,15 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Bindings
- 
+function clearscreen() {
+    clear
+    zle redisplay
+}
+zle -N clearscreen
+
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
-bindkey '^[^L' clear-screen
+bindkey '^[^L' clearscreen
 
 # History
 HISTSIZE=5000
@@ -64,8 +69,6 @@ alias brm='java -jar ~/BRModelo/brModelo.jar'
 alias brm2='wine ~/BRModelo/brModelo-2.0-win32.exe'
 
 # Shell integrations
-export PATH="$PATH:/opt/nvim/"
-export PATH="$PATH:/usr/share/texlive"
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
 
