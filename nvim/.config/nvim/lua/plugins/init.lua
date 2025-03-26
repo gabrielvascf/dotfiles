@@ -37,6 +37,17 @@ return {
     "hrsh7th/nvim-cmp",
   },
   {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require "configs.lint"
+    end,
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
+  {
     "lervag/vimtex",
     lazy = false,
     init = function()

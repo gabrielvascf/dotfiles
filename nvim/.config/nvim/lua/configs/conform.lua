@@ -10,12 +10,8 @@ local options = {
     typescript = { "prettier" },
     tex = { "latexindent" },
   },
-
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true,
-  },
+  log_level = vim.log.levels.DEBUG,
+  log_path = "~/.local/state/nvim/conform.log",
 }
 
 return options

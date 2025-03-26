@@ -14,4 +14,3 @@ map("n", "<C-F>", '<cmd> lua require("conform").format()<CR>', { desc = "format"
 map("n", "[d", "<cmd> lua vim.diagnostic.goto_prev()<CR>", { desc = "go to prev diagnostic" })
 map("n", "]d", "<cmd> lua vim.diagnostic.goto_next()<CR>", { desc = "go to next diagnostic" })
 map("i", "jj", "<ESC>", { noremap = true, silent = true })
-

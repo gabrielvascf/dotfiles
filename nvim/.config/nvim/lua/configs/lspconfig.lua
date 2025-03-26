@@ -4,7 +4,7 @@ require("java").setup()
 
 local lspconfig = require "lspconfig"
 -- EXAMPLE
-local servers = { "clangd", "ts_ls", "emmet_language_server", "pylyzer", "texlab", "jdtls" }
+local servers = { "clangd", "emmet_ls", "pylyzer", "texlab", "jdtls", "luau_lsp" }
 local nvlsp = require "nvchad.configs.lspconfig"
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- lsps with default config
@@ -21,3 +21,8 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- typescript setup
+require("typescript-tools").setup {
+  on_attach = on_attach,
+}
