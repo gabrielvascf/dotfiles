@@ -1,0 +1,5 @@
+os:
+  editPreset: nvim
+
+git: 
+  overrideGpg: true
