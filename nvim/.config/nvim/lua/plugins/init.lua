@@ -14,6 +14,13 @@ return {
     "zbirenbaum/copilot.lua",
     lazy = false,
     opts = function(_, conf)
+      conf.server_opts_overrides = {
+        settings = {
+          telemetry = {
+            telemetryLevel = "off",
+          },
+        },
+      }
       conf.suggestion = {
         enabled = true,
         auto_trigger = true,
@@ -42,11 +49,11 @@ return {
       require "configs.lint"
     end,
   },
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  },
+  -- {
+  --   "pmizio/typescript-tools.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  --   opts = {},
+  -- },
   {
     "lervag/vimtex",
     lazy = false,
@@ -69,9 +76,9 @@ return {
       }
     end,
   },
-  {
-    "nvim-java/nvim-java",
-  },
+  -- {
+  --   "nvim-java/nvim-java",
+  -- },
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
@@ -94,5 +101,8 @@ return {
         vim.keymap.set("n", "C", api.tree.change_root_to_node, opts "Change Root to Node")
       end,
     },
+  },
+  {
+    "prisma/vim-prisma",
   },
 }
