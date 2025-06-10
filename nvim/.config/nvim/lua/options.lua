@@ -1,8 +1,8 @@
 require "nvchad.options"
 
 local options = {
-  tabstop = 4, -- Number of spaces for a tab
-  shiftwidth = 4, -- Number of spaces for indentation
+  tabstop = 2, -- Number of spaces for a tab
+  shiftwidth = 2, -- Number of spaces for indentation
   expandtab = true, -- Use tabs instead of spaces
 }
 
