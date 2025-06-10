@@ -67,7 +67,9 @@ alias bat='batcat'
 alias time='/usr/bin/time'
 alias brm='java -jar ~/BRModelo/brModelo.jar'
 alias brm2='wine ~/BRModelo/brModelo-2.0-win32.exe'
+alias y=yazi
 
+export EDITOR=nvim
 # Shell integrations
 export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
