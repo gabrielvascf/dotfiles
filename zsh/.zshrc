@@ -68,6 +68,7 @@ alias time='/usr/bin/time'
 alias brm='java -jar ~/BRModelo/brModelo.jar'
 alias brm2='wine ~/BRModelo/brModelo-2.0-win32.exe'
 alias y=yazi
+alias sqldeveloper="sh ~/Documents/sqldeveloper/sqldeveloper.sh"
 
 export EDITOR=nvim
 # Shell integrations
@@ -76,6 +77,7 @@ export GPG_TTY=$(tty)
 
 eval "$(zoxide init --cmd cd zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(uv generate-shell-completion zsh)"
 
 # pnpm
 export PNPM_HOME="/home/gabriel/.local/share/pnpm"
