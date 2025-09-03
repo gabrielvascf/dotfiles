@@ -6,7 +6,7 @@ local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- EXAMPLE
-local servers = { "clangd", "pyright", "texlab", "luau_lsp", "prismals", "html", "ts_ls", "intelephense" }
+local servers = { "clangd", "pyright", "texlab", "prismals", "html", "ts_ls", "intelephense" }
 -- lsps with default config
 local on_attach = function(client, bufnr)
   -- Enable LSP-based indentation

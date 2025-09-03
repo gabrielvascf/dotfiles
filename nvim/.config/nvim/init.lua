@@ -38,3 +38,15 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- Replace the old is_rojo_project() block in your init.lua with this
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.luau",
+  callback = function()
+    -- Check for a rojo project file in parent directories
+    local is_rojo = vim.fs.find({ "default.project.json", "rojo.json" }, { upward = true, stop = vim.env.HOME })[1]
+    if is_rojo then
+      vim.bo.filetype = "luau"
+    end
+  end,
+})

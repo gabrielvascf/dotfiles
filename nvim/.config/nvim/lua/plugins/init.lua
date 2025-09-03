@@ -105,4 +105,57 @@ return {
   {
     "prisma/vim-prisma",
   },
+  {
+    "lopi-py/luau-lsp.nvim",
+    version = "*", -- Or a specific tag
+    dependencies = { "nvim-lua/plenary.nvim" },
+    -- lazy = false,
+    ft = "luau",
+    config = function()
+      -- This setup function configures the Luau LSP for Rojo projects
+      require("luau-lsp").setup {
+        -- Server settings for lspconfig
+        server = {
+          -- Ensure file watcher capability is enabled for sourcemap updates on Linux
+          capabilities = (function()
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            -- Integrate with nvim-cmp capabilities if used
+            if pcall(require, "cmp_nvim_lsp") then
+              capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+            end
+            -- This is critical for Linux to detect sourcemap changes
+            -- capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+            return capabilities
+          end)(),
+          settings = {
+            ["luau-lsp"] = {
+              completion = {
+                imports = {
+                  enabled = true, -- Enable import suggestions
+                },
+              },
+            },
+          },
+        },
+        -- Platform and type definitions
+        platform = {
+          type = "roblox", -- Use Roblox globals and types
+        },
+        types = {
+          roblox_security_level = "PluginSecurity", -- Provides access to all APIs, including plugin-only ones
+        },
+        -- Sourcemap configuration for Rojo
+        sourcemap = {
+          enabled = true, -- Enable sourcemap support
+          autogenerate = true, -- Automatically generate sourcemap on server attach
+          rojo_project_file = "default.project.json", -- Assumes default Rojo project file name
+          sourcemap_file = "sourcemap.json", -- The output file for the sourcemap
+        },
+        -- FFlag synchronization
+        fflags = {
+          sync = true, -- Sync FFlags with Roblox's latest published flags
+        },
+      }
+    end,
+  },
 }
