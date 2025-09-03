@@ -1,0 +1,28 @@
+# For TOML (~/.config/alacritty/alacritty.toml)
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 12.0
+
+# Optional: Adjust glyph offsets if characters appear misaligned
+# [font.offset]
+# x = 0
+# y = 0
+#
+# [font.glyph_offset]
+# x = 0
+# y = 0
+
+[keyboard]
+bindings = [
+  # { key = "V", mods = "Control|Shift", action = "Paste" },
+  # { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "F11", mods = "None", action = "ToggleFullscreen" },
+]
+[window]
+decorations = "none"
+
+[[import]]
+path = "/home/gabriel/.config/alacritty/themes/catppuccin-mocha.toml"
