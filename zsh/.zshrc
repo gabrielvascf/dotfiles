@@ -77,7 +77,6 @@ export GPG_TTY=$(tty)
 
 eval "$(zoxide init --cmd cd zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(uv generate-shell-completion zsh)"
 
 # pnpm
 export PNPM_HOME="/home/gabriel/.local/share/pnpm"
@@ -92,3 +91,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/home/gabriel/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/gabriel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+. "$HOME/.local/bin/env"
+eval "$(uv generate-shell-completion zsh)"
