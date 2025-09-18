@@ -69,10 +69,11 @@ alias brm='java -jar ~/BRModelo/brModelo.jar'
 alias brm2='wine ~/BRModelo/brModelo-2.0-win32.exe'
 alias y=yazi
 alias sqldeveloper="sh ~/Documents/sqldeveloper/sqldeveloper.sh"
+alias lsb='ls -lah --color=never | bat -p -l conf --pager never'
+alias man='batman'
 
 export EDITOR=nvim
 # Shell integrations
-export GPG_TTY=$(tty)
 export GPG_TTY=$(tty)
 
 eval "$(zoxide init --cmd cd zsh)"
@@ -94,3 +95,4 @@ export PHP_INI_SCAN_DIR="/home/gabriel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
+eval "$(gh completion -s zsh)"
