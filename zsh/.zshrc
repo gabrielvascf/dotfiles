@@ -68,9 +68,10 @@ alias time='/usr/bin/time'
 alias brm='java -jar ~/BRModelo/brModelo.jar'
 alias brm2='wine ~/BRModelo/brModelo-2.0-win32.exe'
 alias y=yazi
-alias sqldeveloper="sh ~/Documents/sqldeveloper/sqldeveloper.sh"
+alias sqldeveloper="sh ~/Documents/sqldeveloper/sqldeveloper.sh &"
 alias lsb='ls -lah --color=never | bat -p -l conf --pager never'
 alias man='batman'
+alias ssh='kitty +kitten ssh'
 
 export EDITOR=nvim
 # Shell integrations
