@@ -1,13 +1,14 @@
 require "configs.tabsettings"
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
+vim.o.winborder = 'rounded'
 vim.opt.relativenumber = true
 vim.api.nvim_set_hl(0, "Comment", { fg = "#808080" }) -- Ensure comments are grey
 vim.opt.clipboard:append { "unnamedplus" } -- Use system clipboard
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-if not vim.uv.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local repo = "https://github.com/folke/lazy.nvim.git"
   vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end

@@ -11,7 +11,7 @@ for k, v in pairs(options) do
 end
 -- add yours here!
 vim.g.conform_debug = true
-vim.g.vimtex_view_method = 'zathura'
+-- vim.g.vimtex_view_method = 'zathura'
 vim.g.vimtex_view_forward_search_on_start = 1
 vim.o.cursorlineopt = 'both' -- to enable cursorline!
 -- local o = vim.o
