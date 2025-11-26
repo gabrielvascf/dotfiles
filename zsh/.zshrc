@@ -122,4 +122,5 @@ export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(gh completion -s zsh)"
+eval "$(xh --generate=complete-zsh)"
 zinit light zsh-users/zsh-syntax-highlighting
