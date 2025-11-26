@@ -21,7 +21,6 @@ eval "$(starship init zsh)"
 eval "$(dircolors -b)"
 
 # Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
@@ -33,10 +32,32 @@ function clearscreen() {
 }
 zle -N clearscreen
 
+stty -ixon
+# History bindings
+bindkey '^R' history-incremental-search-backward
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+
+# Clear screen
 bindkey '^[^L' clearscreen
 
+# Fix for vi mode
+bindkey '^Q' push-line
+
+# Ctrl+left, ctrl+right
+bindkey -M viins "^[[1;5D" backward-word
+bindkey -M vicmd "^[[1;5D" backward-word
+bindkey -M viins "^[[1;5C" forward-word
+bindkey -M vicmd "^[[1;5C" forward-word
+
+# Insert last argument
+bindkey -M viins '\e.' insert-last-word
+bindkey -M vicmd '\e.' insert-last-word
+
+# Edit command line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^Xe" edit-command-line
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -94,6 +115,11 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/home/gabriel/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/gabriel/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
+# .NET Core SDK
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+
 . "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(gh completion -s zsh)"
+zinit light zsh-users/zsh-syntax-highlighting
