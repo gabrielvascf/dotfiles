@@ -10,30 +10,30 @@ return {
     lazy = false,
   },
   -- These are some examples, uncomment them if you want to see them work!
-  {
-    "zbirenbaum/copilot.lua",
-    lazy = false,
-    opts = function(_, conf)
-      conf.server_opts_overrides = {
-        settings = {
-          telemetry = {
-            telemetryLevel = "off",
-          },
-        },
-      }
-      conf.suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        h1_group = "Comment",
-        keymap = {
-          accept = "<M-l>",
-          dismiss = "<M-h>",
-          trigger = "<C-space>",
-        },
-      }
-      conf.panel = { enabled = false }
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   lazy = false,
+  --   opts = function(_, conf)
+  --     conf.server_opts_overrides = {
+  --       settings = {
+  --         telemetry = {
+  --           telemetryLevel = "off",
+  --         },
+  --       },
+  --     }
+  --     conf.suggestion = {
+  --       enabled = true,
+  --       auto_trigger = true,
+  --       h1_group = "Comment",
+  --       keymap = {
+  --         accept = "<M-l>",
+  --         dismiss = "<M-h>",
+  --         trigger = "<C-space>",
+  --       },
+  --     }
+  --     conf.panel = { enabled = false }
+  --   end,
+  -- },
   {
     "neovim/nvim-lspconfig",
     config = function()
