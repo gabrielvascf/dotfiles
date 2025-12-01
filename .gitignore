@@ -1,4 +1,3 @@
 btop/
 lazy-lock.json
-**/plugins
-
+tmux/**/plugins
